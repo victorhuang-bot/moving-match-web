@@ -102,3 +102,10 @@ V1.2.1 的聯絡 CTA 暫用 `service@moving-match.com` 作為版面預留，正�
 - 「智慧物流」導覽改為 `#logistics`，直接跳到真正的智慧物流內容區，而不是 Hero。
 - 修正 Hero 重複 id。
 - CSS / JS cache-busting 更新為 v142。
+
+
+## V1.4.5
+- Homepage hero replaced with latest supplied image.
+- Cache-busting fixed to styles.css?v=124, app.js?v=124, hero ?v=124.
+- Desktop hero media capped at 560×420 px; left copy protected from vertical compression.
+- Inquiry modal critical styles remain inline in index.html.
