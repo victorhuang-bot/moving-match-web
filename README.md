@@ -50,3 +50,11 @@ V1.2.1 的聯絡 CTA 暫用 `service@moving-match.com` 作為版面預留，正�
 - 聯絡電話與 service@moving-match.com 移到「填寫搬遷需求」按鈕正上方。
 - 需求表維持 Modal：按按鈕才彈出，不直接顯示在頁面。
 - 表單送出後關閉 Modal、清空欄位，並開啟預填 Email。
+
+
+## V1.2.4
+- 修正瀏覽器/Render 靜態資源快取：CSS、JS、首頁主圖全部加版本參數 v=124。
+- 首頁主圖固定在右欄最大 560px、最大高度 420px，不再把左側標題擠成直排。
+- Modal 關鍵樣式直接放入 HTML head，避免舊 CSS 快取造成表單攤平在頁面底部。
+- 聯絡電話與 service@moving-match.com 保留在「填寫搬遷需求」按鈕上方。
+- 搬遷需求表只有點按鈕才彈出；送出後關閉。
