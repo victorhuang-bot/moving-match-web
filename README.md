@@ -78,3 +78,10 @@ V1.2.1 的聯絡 CTA 暫用 `service@moving-match.com` 作為版面預留，正�
 - 桌機恢復三欄正常寬度；品牌介紹不再被壓成直排。
 - 平板與手機保留響應式排版。
 - CSS / JS 快取版本更新為 v131。
+
+
+## V1.4
+- 全站英文品牌名稱統一由 `Moving Match` 改為 `Moving-Match`。
+- Footer 公司介紹旁新增／修正正式搬家通 Logo 顯示。
+- 修正 Footer 原先指向不存在的 `logo-moving-match.png`，改用現有 `moving-match-logo.jpg`。
+- CSS / JS cache-busting 更新為 v140。
