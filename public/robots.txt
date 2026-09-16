@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://moving-match.com/sitemap.xml

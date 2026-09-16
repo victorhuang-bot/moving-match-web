@@ -1,0 +1,17 @@
+{
+  "name": "moving-match-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "搬家通 Moving Match 官方形象網站 V1.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/assets/app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  }
+}
