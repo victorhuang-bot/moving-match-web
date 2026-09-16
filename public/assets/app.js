@@ -28,8 +28,7 @@ function setInquiryModal(open) {
 }
 
 document.querySelectorAll(".open-inquiry").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
+  button.addEventListener("click", () => {
     setInquiryModal(true);
   });
 });
@@ -63,3 +62,10 @@ if (inquiryForm) {
       `mailto:service@moving-match.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
+
+
+document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+  if (link.closest("#inquiryModal")) {
+    link.addEventListener("click", () => setInquiryModal(false));
+  }
+});

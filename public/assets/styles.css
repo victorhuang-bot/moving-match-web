@@ -301,3 +301,11 @@ html{scroll-behavior:smooth}
 
 /* V1.4.2 — navigation target */
 #logistics{scroll-margin-top:100px}
+
+
+/* V1.4.3 — no-JS fallback for inquiry modal */
+#inquiryModal:target{display:flex!important}
+#inquiryModal:target .modal-panel{display:block!important}
+.modal-backdrop{display:block}
+.modal-close{text-decoration:none}
+#logistics{scroll-margin-top:96px}
