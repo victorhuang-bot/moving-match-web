@@ -309,3 +309,11 @@ html{scroll-behavior:smooth}
 .modal-backdrop{display:block}
 .modal-close{text-decoration:none}
 #logistics{scroll-margin-top:96px}
+
+/* V1.4.4 reliable native close */
+.modal-close-target{position:absolute;width:0;height:0;overflow:hidden}
+#inquiryModal:not(:target){display:none!important}
+#inquiryModal:target{display:flex!important}
+#inquiryModal .modal-panel{position:relative;z-index:10002!important}
+#inquiryModal .modal-close{position:absolute!important;z-index:10004!important;cursor:pointer!important;pointer-events:auto!important;text-decoration:none!important}
+#inquiryModal .modal-backdrop{z-index:10001!important;cursor:pointer!important;pointer-events:auto!important}
