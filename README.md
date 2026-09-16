@@ -92,3 +92,13 @@ V1.2.1 的聯絡 CTA 暫用 `service@moving-match.com` 作為版面預留，正�
 - 「填寫搬遷需求」改為可靠的原生 dialog 彈出表單，填完後帶入 Email。
 - 「智慧物流」導覽連結修正為跳至智慧物流區塊。
 - CSS / JS cache-busting 更新為 v141。
+
+
+## V1.4.2
+- 找到真正原因：舊 JS 第一段直接執行 `document.querySelector("#year").textContent`，
+  但頁面沒有 `#year`，瀏覽器因此在載入 JS 時立即拋錯，後面的搬遷需求 Modal 程式完全沒有執行。
+- 已改為 null-safe 寫法，並以既有 `#inquiryModal` 作為唯一搬遷需求視窗。
+- 移除 V1.4.1 額外重複建立的 dialog，避免兩套 Modal 互相干擾。
+- 「智慧物流」導覽改為 `#logistics`，直接跳到真正的智慧物流內容區，而不是 Hero。
+- 修正 Hero 重複 id。
+- CSS / JS cache-busting 更新為 v142。

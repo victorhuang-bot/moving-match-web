@@ -297,3 +297,7 @@ html{scroll-behavior:smooth}
   .inquiry-grid{grid-template-columns:1fr}
   .inquiry-full{grid-column:auto}
 }
+
+
+/* V1.4.2 — navigation target */
+#logistics{scroll-margin-top:100px}
