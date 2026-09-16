@@ -12,3 +12,44 @@ function setInquiryModal(open){
 openInquiry?.addEventListener("click",()=>setInquiryModal(true));
 modal?.querySelectorAll("[data-close-modal]").forEach(el=>el.addEventListener("click",()=>setInquiryModal(false)));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")setInquiryModal(false)});
+
+
+// V1.4.1 — robust moving inquiry dialog + smart logistics anchor
+document.addEventListener('DOMContentLoaded', () => {
+  const dialog = document.getElementById('movingInquiryDialog');
+  const closeBtn = document.getElementById('movingInquiryClose');
+  const form = document.getElementById('movingInquiryForm');
+
+  document.querySelectorAll('a,button').forEach((el) => {
+    const text = (el.textContent || '').replace(/\s+/g,'').trim();
+    if (text.includes('填寫搬遷需求')) {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+      });
+    }
+  });
+
+  if (closeBtn && dialog) closeBtn.addEventListener('click', () => dialog.close());
+  if (dialog) dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  if (form) form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const subject = `搬遷需求｜${fd.get('moveType') || ''}｜${fd.get('contactName') || ''}`;
+    const body = [
+      `搬遷類型：${fd.get('moveType') || ''}`,
+      `姓名／聯絡人：${fd.get('contactName') || ''}`,
+      `聯絡電話：${fd.get('phone') || ''}`,
+      `搬遷日期：${fd.get('moveDate') || ''}`,
+      `搬遷地區：${fd.get('area') || ''}`,
+      '',
+      '需求說明：',
+      fd.get('details') || ''
+    ].join('\n');
+    window.location.href = `mailto:service@moving-match.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    dialog.close();
+  });
+});

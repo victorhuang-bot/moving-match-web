@@ -85,3 +85,10 @@ V1.2.1 的聯絡 CTA 暫用 `service@moving-match.com` 作為版面預留，正�
 - Footer 公司介紹旁新增／修正正式搬家通 Logo 顯示。
 - 修正 Footer 原先指向不存在的 `logo-moving-match.png`，改用現有 `moving-match-logo.jpg`。
 - CSS / JS cache-busting 更新為 v140。
+
+
+## V1.4.1
+- 修正兩處仍顯示 `MOVING MATCH` 的英文標題為 `MOVING-MATCH`。
+- 「填寫搬遷需求」改為可靠的原生 dialog 彈出表單，填完後帶入 Email。
+- 「智慧物流」導覽連結修正為跳至智慧物流區塊。
+- CSS / JS cache-busting 更新為 v141。
