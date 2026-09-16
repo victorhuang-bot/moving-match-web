@@ -1,8 +1,8 @@
 {
   "name": "moving-match-web",
-  "version": "1.2.0",
+  "version": "1.5.0",
   "private": true,
-  "description": "搬家通 Moving Match 官方形象網站 V1.2",
+  "description": "搬家通 Moving-Match 官方形象網站 V1.5 SEO Render-ready",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

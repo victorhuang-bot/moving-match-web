@@ -1,111 +1,14 @@
-# 搬家通 Moving Match｜形象官網 V1.2.1
+# 搬家通 Moving-Match V1.5 SEO Render-ready
 
-Render-ready 官方形象網站，與既有 `lib.moving-match.com` 圖書物流系統分開部署。
+V1.4.5 視覺與功能基礎上加入品牌 SEO：
 
-## Render 設定
-- Region: Singapore
-- Runtime: Node
-- Build Command: `npm install`
-- Start Command: `npm start`
-- Health Check: `/health`
-- Branch: `main`
+- SEO title / description / canonical / robots meta
+- Open Graph / Twitter Card
+- WebSite + Organization JSON-LD
+- 品牌、法定公司名、電話、Email、統編 structured data
+- robots.txt + sitemap.xml
+- 首頁 H1 增加搬家通 Moving-Match 品牌語意
+- CSS / JS / 首頁主圖 cache-busting 更新為 v=150
+- 保留既有 Modal、智慧物流錨點與版面
 
-## 本機測試
-`npm install` → `npm run check` → `npm start`
-
-## 上線前確認
-V1.2.1 的聯絡 CTA 暫用 `service@moving-match.com` 作為版面預留，正式上線前請確認實際客服信箱。先驗收 Render 預覽網址，再綁定 `moving-match.com`，避免影響既有服務。
-
-
-## V1.2.1 更新
-- 使用正式 Moving Match 公司 Logo，並同步更新 favicon。
-- 物流系統入口文字調整為「圖書物流系統」。
-- 保留預留聯絡信箱，新增聯絡電話 02-27648088。
-
-
-## V1.2.1 更新
-- 首頁主視覺更換為「現場執行 × 配送流程 × 數位管理」整合圖。
-- 聯絡區新增搬遷需求表，可切換「個人搬遷／企業搬遷」。
-- 表單送出會開啟使用者 Email 並自動帶入需求內容，不新增後端資料儲存。
-- 移除聯絡區「既有客戶：圖書物流系統登入」文字連結；網站其他圖書物流系統入口維持。
-- 聯絡電話 02-27648088 保留；客服 Email 仍為版面預留。
-
-
-## V1.2.1 修正
-- 首頁主圖維持原始 3:2 比例完整顯示，不裁切、不拉伸。
-- 搬遷需求區旁保留聯絡電話 02-2764-7088。
-- 搬遷需求區旁顯示聯絡信箱 service@moving-match.com。
-
-
-## V1.2.2
-- 首頁主圖改為獨立 `hero-media`，移除舊 `.visual` 固定高度與裁切規則。
-- 主圖完整等比例顯示，並加 `?v=122` 避免瀏覽器沿用舊圖片快取。
-- 聯絡區恢復簡潔雙欄設計。
-- 搬遷需求表改為按鈕點擊後以 Modal 彈出。
-- 保留聯絡電話 02-2764-7088 與 service@moving-match.com。
-
-
-## V1.2.3
-- 首頁主圖限制最大寬度與高度，避免圖片過大並避免擠壓左側標題。
-- 聯絡電話與 service@moving-match.com 移到「填寫搬遷需求」按鈕正上方。
-- 需求表維持 Modal：按按鈕才彈出，不直接顯示在頁面。
-- 表單送出後關閉 Modal、清空欄位，並開啟預填 Email。
-
-
-## V1.2.4
-- 修正瀏覽器/Render 靜態資源快取：CSS、JS、首頁主圖全部加版本參數 v=124。
-- 首頁主圖固定在右欄最大 560px、最大高度 420px，不再把左側標題擠成直排。
-- Modal 關鍵樣式直接放入 HTML head，避免舊 CSS 快取造成表單攤平在頁面底部。
-- 聯絡電話與 service@moving-match.com 保留在「填寫搬遷需求」按鈕上方。
-- 搬遷需求表只有點按鈕才彈出；送出後關閉。
-
-
-## V1.3
-- 新增深綠色企業 Footer。
-- 新增搬家通品牌簡介。
-- 公司資訊：搬家通股份有限公司 / Moving-Match。
-- 電話：02-2764-7088。
-- Email：info@moving-match.com。
-- 辦公時間：09:00–20:00。
-- 統一編號：85017306。
-- 電話與 Email 支援直接點擊。
-- 保留圖書物流系統登入連結。
-- 延續 V1.2.4 首頁、需求 Modal 與快取修正。
-
-
-## V1.3.1
-- 修正 V1.3 新 Footer 與舊版通用 footer CSS 的衝突。
-- 桌機恢復三欄正常寬度；品牌介紹不再被壓成直排。
-- 平板與手機保留響應式排版。
-- CSS / JS 快取版本更新為 v131。
-
-
-## V1.4
-- 全站英文品牌名稱統一由 `Moving Match` 改為 `Moving-Match`。
-- Footer 公司介紹旁新增／修正正式搬家通 Logo 顯示。
-- 修正 Footer 原先指向不存在的 `logo-moving-match.png`，改用現有 `moving-match-logo.jpg`。
-- CSS / JS cache-busting 更新為 v140。
-
-
-## V1.4.1
-- 修正兩處仍顯示 `MOVING MATCH` 的英文標題為 `MOVING-MATCH`。
-- 「填寫搬遷需求」改為可靠的原生 dialog 彈出表單，填完後帶入 Email。
-- 「智慧物流」導覽連結修正為跳至智慧物流區塊。
-- CSS / JS cache-busting 更新為 v141。
-
-
-## V1.4.2
-- 找到真正原因：舊 JS 第一段直接執行 `document.querySelector("#year").textContent`，
-  但頁面沒有 `#year`，瀏覽器因此在載入 JS 時立即拋錯，後面的搬遷需求 Modal 程式完全沒有執行。
-- 已改為 null-safe 寫法，並以既有 `#inquiryModal` 作為唯一搬遷需求視窗。
-- 移除 V1.4.1 額外重複建立的 dialog，避免兩套 Modal 互相干擾。
-- 「智慧物流」導覽改為 `#logistics`，直接跳到真正的智慧物流內容區，而不是 Hero。
-- 修正 Hero 重複 id。
-- CSS / JS cache-busting 更新為 v142。
-
-
-## V1.4.5
-- Homepage hero replaced with latest supplied image.
-- Cache-busting fixed to styles.css?v=124, app.js?v=124, hero ?v=124.
-- Desktop hero media capped at 560×420 px; left copy protected from vertical compression.
-- Inquiry modal critical styles remain inline in index.html.
+部署後建議到 Google Search Console 驗證網域、提交 `https://moving-match.com/sitemap.xml`，並對首頁要求重新建立索引。
