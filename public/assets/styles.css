@@ -28,3 +28,22 @@ body.modal-open{overflow:hidden}
   .modal{padding:14px}
   .modal .inquiry-form{padding:28px 18px 22px}
 }
+
+/* V1.2.3 — hero scale + inquiry contact placement */
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px}
+.hero>div,.hero-media{min-width:0}
+.hero-media{width:100%;max-width:520px;justify-self:end;border-radius:28px}
+.hero-media img{width:100%;height:auto;max-height:390px;object-fit:contain;object-position:center}
+.inquiry-action .contact-details{margin:0 0 6px;gap:4px}
+.inquiry-action .contact-details a{display:block}
+.inquiry-action .open-inquiry{margin-top:4px}
+@media(max-width:1000px){
+  .hero{gap:34px}
+  .hero-media{max-width:460px}
+  .hero-media img{max-height:345px}
+}
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .hero-media{max-width:620px;justify-self:center}
+  .hero-media img{max-height:none}
+}
