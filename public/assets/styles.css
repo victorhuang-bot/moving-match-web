@@ -47,3 +47,121 @@ body.modal-open{overflow:hidden}
   .hero-media{max-width:620px;justify-self:center}
   .hero-media img{max-height:none}
 }
+
+
+/* =========================
+   V1.3 Corporate Footer
+   ========================= */
+.site-footer{
+  margin-top:0;
+  background:#082d24;
+  color:#f6f1e7;
+  padding:68px 0 0;
+}
+.footer-inner{
+  width:min(1180px,calc(100% - 48px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(180px,.65fr) minmax(260px,.85fr);
+  gap:72px;
+  align-items:start;
+}
+.footer-logo-row{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:24px;
+}
+.footer-logo{
+  width:68px;
+  height:68px;
+  object-fit:contain;
+  border-radius:16px;
+}
+.footer-brand h2,.site-footer h3{
+  color:#fff;
+  margin:0;
+}
+.footer-brand h2{
+  font-size:30px;
+  letter-spacing:.04em;
+}
+.footer-en{
+  margin-top:3px;
+  color:#d7e3df;
+  letter-spacing:.12em;
+  font-size:14px;
+}
+.footer-about{
+  max-width:570px;
+  margin:0;
+  color:#d8e2de;
+  font-size:17px;
+  line-height:2;
+}
+.site-footer h3{
+  font-size:20px;
+  margin-bottom:22px;
+}
+.footer-nav,.footer-company{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.site-footer a{
+  color:#d8e2de;
+  text-decoration:none;
+  transition:opacity .2s ease,color .2s ease;
+}
+.site-footer a:hover{
+  color:#fff;
+  opacity:1;
+}
+.footer-company{
+  color:#d8e2de;
+  line-height:1.65;
+}
+.footer-company strong{
+  color:#fff;
+  font-size:17px;
+}
+.footer-company-en{
+  margin-top:-7px;
+  margin-bottom:8px;
+  color:#c3d2cd;
+}
+.footer-bottom{
+  width:min(1180px,calc(100% - 48px));
+  margin:52px auto 0;
+  padding:22px 0 28px;
+  border-top:1px solid rgba(255,255,255,.16);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#aebfba;
+  font-size:14px;
+}
+@media(max-width:900px){
+  .footer-inner{
+    grid-template-columns:1fr 1fr;
+    gap:44px;
+  }
+  .footer-brand{
+    grid-column:1/-1;
+  }
+}
+@media(max-width:620px){
+  .site-footer{padding-top:48px}
+  .footer-inner{
+    width:min(100% - 32px,1180px);
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+  .footer-brand{grid-column:auto}
+  .footer-about{font-size:16px}
+  .footer-bottom{
+    width:min(100% - 32px,1180px);
+    margin-top:38px;
+    flex-direction:column;
+  }
+}
